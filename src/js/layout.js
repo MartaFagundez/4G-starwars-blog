@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { StarWarsProvider } from "./store/starwarsStore";
+import { StarWarsProvider } from "./store/starwars-store";
 
 import { Home } from "./views/home";
 
