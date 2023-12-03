@@ -1,3 +1,28 @@
 /* 
     General Styles
 */
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.bg-sw-black {
+  background-color: #010b13;
+}
+
+.cut {
+  clip-path: polygon(
+    0 2em,
+    2em 0,
+    calc(100% - 2em) 0,
+    100% 2em,
+    100% calc(100% - 2em),
+    calc(100% - 2em) 100%,
+    2em 100%,
+    0 calc(100% - 2em)
+  );
+}

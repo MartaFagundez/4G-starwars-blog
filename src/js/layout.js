@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { StarWarsProvider } from "./store/starwars-store";
 
-import { Home } from "./views/home";
+import Home  from "./views/home";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { CharactersContextProvider } from "./contexts/characters-context";
+import { PlanetsContextProvider } from "./contexts/planets-context";
 
 //create your first component
 const Layout = () => {
@@ -15,18 +16,21 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="d-flex flex-column justify-content-center bg-sw-black min-vh-100">
 			<BrowserRouter basename={basename}>
-				<StarWarsProvider>
-					<ScrollToTop>
-						<Navbar />
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="*" element={<h1>Not found!</h1>} />
-						</Routes>
-						<Footer />
-					</ScrollToTop>
-				</StarWarsProvider>
+				<CharactersContextProvider>
+					<PlanetsContextProvider>
+						<ScrollToTop>
+							<Navbar />
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="*" element={<h1>Not found!</h1>} />
+							</Routes>
+							<Footer />
+						</ScrollToTop>
+					
+					</PlanetsContextProvider>	
+				</CharactersContextProvider>
 			</BrowserRouter>
 		</div>
 	);
