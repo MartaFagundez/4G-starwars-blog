@@ -66,7 +66,7 @@ export function CharactersContextProvider({ children }) {
 export function useCharactersContext() {
   const context = useContext(CharactersContext);
   if (!context) {
-    throw new Error('useCharactersContext debe ser usado dentro de un CharactersContext2Provider');
+    throw new Error('useCharactersContext debe ser usado dentro de un CharactersContextProvider');
   }
   return context;
 };

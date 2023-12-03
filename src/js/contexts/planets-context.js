@@ -66,7 +66,7 @@ export function PlanetsContextProvider({ children }) {
 export function usePlanetsContext() {
   const context = useContext(PlanetsContext);
   if (!context) {
-    throw new Error('usePlanetsContext debe ser usado dentro de un PlanetsContext2Provider');
+    throw new Error('usePlanetsContext debe ser usado dentro de un PlanetsContextProvider');
   }
   return context;
 };
