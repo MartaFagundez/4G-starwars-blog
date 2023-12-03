@@ -10,6 +10,8 @@ import { CharactersContextProvider } from "./contexts/characters-context";
 import { PlanetsContextProvider } from "./contexts/planets-context";
 import Characters from "./views/characters";
 import CharacterDetail from "./views/character-detail";
+import Planets from "./views/planets";
+import PlanetDetail from "./views/planet-detail";
 
 //create your first component
 const Layout = () => {
@@ -28,6 +30,8 @@ const Layout = () => {
 								<Route path="/" element={<Home />} />
 								<Route path="/characters" element={<Characters />} />
 								<Route path="/characters/:id" element={<CharacterDetail />} />
+								<Route path="/planets" element={<Planets />} />
+								<Route path="/planets/:id" element={<PlanetDetail />} />
 								<Route path="*" element={<h1>Not found!</h1>} />
 							</Routes>
 							<Footer />
