@@ -4,6 +4,7 @@
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 ul {
@@ -14,15 +15,21 @@ ul {
   background-color: #010b13;
 }
 
-.cut {
-  clip-path: polygon(
-    0 2em,
-    2em 0,
-    calc(100% - 2em) 0,
-    100% 2em,
-    100% calc(100% - 2em),
-    calc(100% - 2em) 100%,
-    2em 100%,
-    0 calc(100% - 2em)
-  );
+.sidebar .link {
+  position: relative;
+}
+
+.sidebar .link.active {
+  color: white;
+}
+
+.sidebar .link.active::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-left: 3px solid rgb(255, 193, 7);
+  position: absolute;
+  top: 50%;
+  left: -0.75rem;
+  transform: translateY(-50%);
 }

@@ -8,6 +8,8 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CharactersContextProvider } from "./contexts/characters-context";
 import { PlanetsContextProvider } from "./contexts/planets-context";
+import Characters from "./views/characters";
+import CharacterDetail from "./views/character-detail";
 
 //create your first component
 const Layout = () => {
@@ -24,6 +26,8 @@ const Layout = () => {
 							<Navbar />
 							<Routes>
 								<Route path="/" element={<Home />} />
+								<Route path="/characters" element={<Characters />} />
+								<Route path="/characters/:id" element={<CharacterDetail />} />
 								<Route path="*" element={<h1>Not found!</h1>} />
 							</Routes>
 							<Footer />
