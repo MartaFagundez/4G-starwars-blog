@@ -6,7 +6,7 @@ export default function Sidebar() {
     return (
     <div className="sidebar p-4 ps-3">
         <nav>
-            <ul className="text-white-50 text-uppercase lh-lg">
+            <ul className="text-white-50 text-uppercase lh-lg fs-5 ps-0">
                 
                 <li><NavLink to={"/"} className={`link ${({ isActive }) => isActive ? "active" : ""}`}>Home</NavLink></li>
                 <li><NavLink to={"/characters"} className={`link ${({ isActive }) => isActive ? "active" : ""}`}>Characters</NavLink></li>

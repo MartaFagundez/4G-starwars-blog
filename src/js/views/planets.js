@@ -6,7 +6,7 @@ import PlanetsList from "../component/planets-list";
 export default function Planets() { 
 
 	return (
-		<div className="d-flex w-100">
+		<div className="container-fluid d-flex w-100" style={{maxWidth: "1400px"}}>
 			<Sidebar />
 			<PlanetsList />
 				

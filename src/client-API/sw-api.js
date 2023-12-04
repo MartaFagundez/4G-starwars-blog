@@ -23,7 +23,7 @@ export const fetchCharacter = async characterId => {
     }
 
     const data = await response.json();
-    return data.result;
+    return data.result.properties;
 
   } catch (error) {
     console.error('Error fetching character:', error);
@@ -55,7 +55,7 @@ export const fetchPlanet = async planetId => {
     }
 
     const data = await response.json();
-    return data.result;
+    return data.result.properties;
 
   } catch (error) {
     console.error('Error fetching planet:', error);

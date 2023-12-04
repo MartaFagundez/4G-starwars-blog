@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import { fetchCharacters } from "../../client-API/sw-api";
+import { fetchCharacter, fetchCharacters } from "../../client-API/sw-api";
 
 
 // Crear el contexto para el store
@@ -42,8 +42,14 @@ export function CharactersContextProvider({ children }) {
         .then(data => {
           // Modifica la lista de personajes del store
           setStore({...store, characters: data});
-      });
+        });
     },
+    setCharacterDetails: (id) => {
+      fetchCharacter(id)
+        .then(data => {
+          setStore({...store, characterDetails: data});
+        });
+    }
   }
 
 

@@ -11,7 +11,7 @@ export default function CharacterCard({character}) {
 
     return (
 
-            <div className="card bg-dark shadow m-2" style={{width: "14rem"}}>
+            <div className="card bg-dark shadow m-2" style={{width: "13rem"}}>
                 <figure className="card-img-top d-flex overflow-hidden border-bottom border-warning m-0" style={{height: "14rem"}}>
                 <img
                     src={characterImageUrl}

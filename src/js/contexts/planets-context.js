@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import { fetchPlanets } from "../../client-API/sw-api";
+import { fetchPlanets, fetchPlanet } from "../../client-API/sw-api";
 
 
 // Crear el contexto para el store
@@ -44,6 +44,12 @@ export function PlanetsContextProvider({ children }) {
           setStore({...store, planets: data});
       });
     },
+    setPlanetDetails: (id) => {
+      fetchPlanet(id)
+        .then(data => {
+          setStore({...store, planetDetails: data});
+        });
+    }
   }
 
 

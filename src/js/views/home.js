@@ -6,7 +6,7 @@ import poster from "../../img/starwars_poster.jpg";
 export default function Home() { 
 
 	return (
-		<div className="d-flex w-100">
+		<div className="container-fluid d-flex w-100" style={{maxWidth: "1400px"}} >
 			<Sidebar />
 
 			<main className="d-flex flex-column align-items-center justify-content-start w-100 p-4 mb-4">

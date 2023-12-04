@@ -6,7 +6,7 @@ import CharactersList from "../component/characters-list";
 export default function Characters() { 
 
 	return (
-		<div className="d-flex w-100">
+		<div className="container-fluid d-flex w-100" style={{maxWidth: "1400px"}}>
 			<Sidebar />
 			<CharactersList />
 				
