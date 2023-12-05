@@ -15,6 +15,7 @@ import PlanetDetail from "./views/planet-detail";
 
 import stars from "../img/stars.png";
 import twinkling from "../img/twinkling.png";
+import { FavoritesContextProvider } from "./contexts/favorites-context";
 
 //create your first component
 const Layout = () => {
@@ -28,23 +29,24 @@ const Layout = () => {
 			<div className="twinkling z-1" style={{background: `transparent url(${twinkling}) repeat top center`}}></div>
 			<div className="d-flex flex-column align-items-center min-vh-100 z-3 w-100">
 				<BrowserRouter basename={basename}>
-					<CharactersContextProvider>
-						<PlanetsContextProvider>
-							<ScrollToTop>
-								<Navbar />
-								<Routes>
-									<Route path="/" element={<Home />} />
-									<Route path="/characters" element={<Characters />} />
-									<Route path="/characters/:id" element={<CharacterDetail />} />
-									<Route path="/planets" element={<Planets />} />
-									<Route path="/planets/:id" element={<PlanetDetail />} />
-									<Route path="*" element={<h1>Not found!</h1>} />
-								</Routes>
-								<Footer />
-							</ScrollToTop>
-						
-						</PlanetsContextProvider>	
-					</CharactersContextProvider>
+					<FavoritesContextProvider>
+						<CharactersContextProvider>
+							<PlanetsContextProvider>
+								<ScrollToTop>
+									<Navbar />
+									<Routes>
+										<Route path="/" element={<Home />} />
+										<Route path="/characters" element={<Characters />} />
+										<Route path="/characters/:id" element={<CharacterDetail />} />
+										<Route path="/planets" element={<Planets />} />
+										<Route path="/planets/:id" element={<PlanetDetail />} />
+										<Route path="*" element={<h1>Not found!</h1>} />
+									</Routes>
+									<Footer />
+								</ScrollToTop>	
+							</PlanetsContextProvider>	
+						</CharactersContextProvider>
+					</FavoritesContextProvider>
 				</BrowserRouter>
 			</div>
 		</div>
