@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/sw-logo.png";
+import { useFavoritesContext } from "../contexts/favorites-context";
 
 export function Navbar()  {
+	const {store, actions} = useFavoritesContext();
+
+	const totalFavorites = store.characters.length + store.planets.length;
 
 	return (
 		<>
@@ -19,7 +23,7 @@ export function Navbar()  {
 							{/* Favorites */}
 							<li className="nav-item">
 								<Link className="nav-link position-relative me-4" to="/">Favorites <span className="position-absolute translate-middle badge rounded-pill bg-danger" style={{top: "0.5rem", right: "-2rem"}}>
-									10
+									{totalFavorites}
 									<span className="visually-hidden">favorites</span>
 								</span>
 								</Link>
