@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useCharactersContext } from '../contexts/characters-context';
 import loadingImg from "../../img/loading.gif";
 import defaultImg from "../../img/default-img.jpg";
-import { Link } from 'react-router-dom';
 
 
 export default function CharacterDetail() {
+  const navigate = useNavigate();
   const { store, actions} = useCharactersContext();
 
   const params = useParams();
@@ -17,6 +17,11 @@ export default function CharacterDetail() {
     actions.setCharacterDetails(params.id);
 
   }, []);
+
+  function handleClick() {
+    actions.clearCharacterDetails();
+    navigate("/characters");
+  }
 
   return (
     <>
@@ -68,7 +73,7 @@ export default function CharacterDetail() {
             </div>
           </div>
 
-          <Link to={'/characters'} className='btn btn-outline-warning mt-2 mb-4'>Go to Characters List</Link>
+          <button className='btn btn-outline-warning mt-2 mb-4' onClick={handleClick}>Go to Characters List</button>
         </div>
       } 
     </>

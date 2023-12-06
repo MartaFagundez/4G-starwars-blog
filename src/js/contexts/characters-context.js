@@ -49,6 +49,12 @@ export function CharactersContextProvider({ children }) {
         .then(data => {
           setStore({...store, characterDetails: data});
         });
+    },
+    clearCharacterDetails: () => {
+      setStore((prevState) => ({
+        ...prevState,
+        characterDetails: {}
+      }))
     }
   }
 
