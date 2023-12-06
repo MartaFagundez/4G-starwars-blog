@@ -49,6 +49,12 @@ export function PlanetsContextProvider({ children }) {
         .then(data => {
           setStore({...store, planetDetails: data});
         });
+    },
+    clearPlanetDetails: () => {
+      setStore((prevState) => ({
+        ...prevState,
+        planetDetails: {}
+      }))
     }
   }
 

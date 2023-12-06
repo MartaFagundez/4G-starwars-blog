@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { usePlanetsContext } from '../contexts/planets-context';
 import loadingImg from "../../img/loading.gif";
 import defaultImg from "../../img/default-img.jpg";
-import { Link } from 'react-router-dom';
+
 
 
 export default function PlanetDetail() {
+  const navigate = useNavigate();
   const { store, actions} = usePlanetsContext();
 
   const params = useParams();
@@ -17,6 +18,11 @@ export default function PlanetDetail() {
     actions.setPlanetDetails(params.id);
 
   }, []);
+
+  function handleClick() {
+    actions.clearPlanetDetails();
+    navigate("/planets");
+  }
 
   return (
     <>
@@ -68,7 +74,7 @@ export default function PlanetDetail() {
             </div>
           </div>
 
-          <Link to={'/planets'} className='btn btn-outline-warning mt-2 mb-4'>Go to Planets List</Link>
+          <button className='btn btn-outline-warning mt-2 mb-4' onClick={handleClick}>Go to Planets List</button>
         </div>
       } 
     </>
