@@ -22,7 +22,7 @@ export function Navbar()  {
 					<ul className="navbar-nav mb-2 mb-lg-0">
 							{/* Favorites */}
 							<li className="nav-item">
-								<Link className="nav-link position-relative me-4" to="/">Favorites <span className="position-absolute translate-middle badge rounded-pill bg-danger" style={{top: "0.5rem", right: "-2rem"}}>
+								<Link className="nav-link position-relative me-4" to="/favorites">Favorites <span className="position-absolute translate-middle badge rounded-pill bg-danger" style={{top: "0.5rem", right: "-2rem"}}>
 									{totalFavorites}
 									<span className="visually-hidden">favorites</span>
 								</span>

@@ -16,6 +16,7 @@ import PlanetDetail from "./views/planet-detail";
 import stars from "../img/stars.png";
 import twinkling from "../img/twinkling.png";
 import { FavoritesContextProvider } from "./contexts/favorites-context";
+import Favorites from "./views/favorites";
 
 //create your first component
 const Layout = () => {
@@ -40,6 +41,7 @@ const Layout = () => {
 										<Route path="/characters/:id" element={<CharacterDetail />} />
 										<Route path="/planets" element={<Planets />} />
 										<Route path="/planets/:id" element={<PlanetDetail />} />
+										<Route path="/favorites" element={<Favorites />} />
 										<Route path="*" element={<h1>Not found!</h1>} />
 									</Routes>
 									<Footer />
