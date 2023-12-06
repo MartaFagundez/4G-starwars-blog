@@ -20,7 +20,7 @@ export default function CharactersList({characters}) {
             {/* LIST */}
             {
                 characters.length > 0 && 
-                    <ul className="d-flex flex-wrap justify-content-center align-items-start w-100">
+                    <ul className="d-flex flex-wrap justify-content-start align-items-start w-100">
                         { 
                             characters.map((character) => {
                                 return	(
